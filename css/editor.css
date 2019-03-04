@@ -1,0 +1,235 @@
+
+:root {
+    --sidebar-width: 285px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    /*min-width:  960px;
+    min-height: 540px;*/
+}
+
+#editor {
+    display: flex;
+    height: 100vh;
+}
+
+#EditorCanvas {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+}
+
+.isSelected {
+    background-color: rgba(146, 209, 184, 1);
+    color: #222;
+}
+
+.marker,
+.Marker {
+    display: none;
+    background-color: rgba(0,0,255, 0.3);
+    border: 2px solid blue;
+    color: rgba(255,255,255,0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    height: 8px;
+    width: 8px;
+    pointer-events: none;
+}
+
+.Screen {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #013e3f;
+}
+
+.Viewport {
+    position: relative;
+    background-color: orange;
+    cursor: default;
+}
+
+.Viewport canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/** Sidebar **/
+
+.Sidebar {
+    padding: 16px;
+    background-color: #1b1b1b;
+    color: #222;
+    flex: 0 0 var(--sidebar-width);
+    height: 100%;
+    width: var(--sidebar-width);
+    /*box-shadow: -3px 0px 10px rgba(0,0,0,0.2);*/
+    z-index: 5;
+}
+.Panels {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: -3px 0 0 rgba(255, 255, 255, 0.84), 3px 0 0 rgba(255, 255, 255, 0.84), 0 3px 0 rgba(255, 255, 255, 0.84), 0 -3px 0 rgba(255, 255, 255, 0.84);
+}
+
+.PanelHeader {
+    background-color: #333;
+    border-top: 1px solid #fafafa;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 4px;
+    text-transform: uppercase;
+}
+
+.Panels > div:first-child .PanelHeader {
+    border-top: none;
+}
+
+.Controls-container {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+/** blocks **/
+
+.ElementPanel {
+    height: 40vh;
+}
+
+.ElementPanel .tab-container {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.ElementPanel .tab-container::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 20px;
+}
+.ElementPanel .tab-container::-webkit-scrollbar-track{
+    background: rgb(49, 49, 49);
+    border-radius: 20px;
+}
+.ElementPanel .tab-container::-webkit-scrollbar-thumb{
+    width: 24px;
+    background: rgb(196, 196, 196);
+    border-radius: 15px;
+}
+
+.Element {
+    overflow: hidden;
+    padding-bottom: 3.5rem;
+    position: relative;
+    width: 100%;
+}
+
+.Element span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 6px 0 2px 2px;
+    text-transform: uppercase;
+}
+
+.Element img {
+    margin: 0;
+    height: 60px;
+}
+
+/* Tabs */
+
+.tabs {
+    display: flex;
+    margin-top: 5px;
+}
+
+.tab {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: default;
+    flex: 1 33.33%;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 0.3rem 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.tab :active {
+    background-color: #aaa;
+    border: 1px solid #777;
+    border-bottom: none;
+}
+
+
+.Button {
+    display: inline-block;
+    padding: 0.2rem 0.3rem;
+    border: 1px solid #aaa;
+    color: #222;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-top: 3px; 
+    margin-bottom: 3px; 
+
+    width: 40%;
+}
+.buttonColor {
+    display: inline-block;
+    padding: 0.2rem 0.3rem;
+    border: 1px solid #aaa;
+    color: #e0e0e0;
+    border-radius: 2px;
+    margin-top: 3px; 
+    margin-bottom: 3px; 
+    width: 40%;
+}
+.Button:active {
+    border: 1px solid #e0e0e0;
+    background-color: #aaa;
+    color: #222;
+}
+
+.ButtonSelected {
+    border: 1px solid #d49090;
+    background-color: rgb(156, 60, 60);
+    color: #e0e0e0;
+}
+
+input {
+    width: 50%;
+}
+select {
+    width: 50%;
+}
+label {
+    width: 50%;
+    color : #e0e0e0;
+}

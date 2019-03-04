@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+
+html, body {
+    width:  100%;
+    height: 100%;
+    margin: 0px;
+    background-color: black;
+}
+
+#main-game {
+    background-color: #013e3f;
+    overflow: hidden;
+}
+#MainCanvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #013e3f;
+    border-color: #5a5ef6 #262626 #262626 #5a5ef6;
+    
+}
+
+#menu {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(143, 0, 0);
+}
+
+.menu-item {
+    font-family: "Press Start 2P", cursive;
+    font-size: 6vh;
+    padding-top : 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    cursor:pointer;
+}
+.menu-item-option {
+    font-family: "Press Start 2P", cursive;
+    font-size: 4vh;
+    padding-top : 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.option-item {
+    font-size: 20px;
+    padding : 20px;
+    text-align: left;
+}
+.logo {
+    height: 20%;
+    display: block;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.init {
+    position: fixed;
+    width: inherit;
+    height: inherit;
+}
+
+@keyframes fadeBlack {
+    0% {
+        opacity: 1;
+        z-index: 2;
+    }
+    50% {
+        opacity: 1;
+    } 
+    99% {
+        z-index: 2;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    } 
+ } 
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+        z-index: 3;
+    }
+    50% {
+        opacity: 1;
+    }
+    99% {
+        z-index: 3;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    } 
+ } 
+
+ .fadeOut {
+    -webkit-animation-duration: 5s;animation-duration: 5s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+ }
+ .fadeBlack {
+    -webkit-animation-duration: 8s;animation-duration: 8s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeBlack;
+    animation-name: fadeBlack;
+ }
+
+.menu, .selected {
+    color: rgb(255, 240, 197);
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+.menu-container::-webkit-scrollbar {
+    width: 10px;
+}
+.menu-container::-webkit-scrollbar-track {
+background: #00000046; 
+}
+.menu-container::-webkit-scrollbar-thumb {
+background: rgb(0, 0, 0); 
+}
+
+.menu-container {
+    padding-top: 5%; 
+    height: 75%;
+    /*padding-bottom: 10%;*/ 
+    padding-left: 10%; 
+    padding-right: 10%; 
+    overflow: auto;
+}
+.hide {
+    display : none !important;
+}
+
+.wrapper {margin: 20px auto;}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: auto;
+}
+
+.right {
+    width: 40%;
+}
+.left {
+    margin-left: 10%;
+    /*width: 20%;*/
+    width : 300px;
+}
+
+.middle {
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+
+.ui {
+    font-family: "Press Start 2P", cursive;
+    padding: 16px 0;
+    display: flex;
+}
+.ui:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.ui + .ui {
+    padding-top: 0px;
+}
+.ui.container {
+    box-shadow: -3px 0 0 rgba(0, 0, 0, 0.84), 3px 0 0 rgba(0, 0, 0, 0.84), 0 3px 0 rgba(0, 0, 0, 0.84), 0 -3px 0 rgba(0, 0, 0, 0.84);
+    /*background: #fff;*/
+    color: rgba(0, 0, 0, 0.84);
+    border: none;
+    margin: 4px 0;
+    padding: 16px;
+    margin: 0 0 24px;
+    padding: 16px;
+    line-height: 1.42;
+    font-size: 14px;
+    color : white;
+}
+
+.ui.container.inset {
+    box-shadow: inset 4px 4px 0 rgba(0, 0, 0, 0.15), -4px 0 0 rgba(0, 0, 0, 0.84), 4px 0 0 rgba(51, 51, 51, 0.84), 0 4px 0 rgba(51, 51, 51, 0.84), 0 -4px 0 rgba(0, 0, 0, 0.84);
+  }
+.ui.container.raised {
+    box-shadow: inset 4px 4px 0 rgba(255, 255, 255, 0.5), inset -4px -4px 0 rgba(0, 0, 0, 0.15), -4px 0 0 rgba(0, 0, 0, 0.84), 4px 0 0 rgba(0, 0, 0, 0.84), 0 4px 0 rgba(0, 0, 0, 0.84), 0 -4px 0 rgba(0, 0, 0, 0.84), 8px 4px 0 rgba(0, 0, 0, 0.15), 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.ui button:first-child {
+    margin-left: 0;
+}
+.ui button {
+    box-shadow: -4px 0 0 rgba(0, 0, 0, 0.84), 4px 0 0 rgba(0, 0, 0, 0.84), 0 4px 0 rgba(0, 0, 0, 0.84), 0 -4px 0 rgba(0, 0, 0, 0.84);
+    color: rgb(255, 255, 255);
+    border: none;
+    margin: 4px 0;
+    padding: 4px;
+    font-family: "Press Start 2P", cursive;
+    cursor: pointer;
+    text-align: left;
+    line-height: 1;
+    margin-top: 4px;
+    margin-left: 16px;
+    white-space: nowrap;
+}
+.ui .button-group button + button, .ui.button-group button + button {
+    margin-left: 0;
+  }
+  .ui .button-group button + button:active, .ui.button-group button + button:active {
+    margin-left: 0;
+  }
+
+
+  .hud-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  
+  .hud {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    align-content: stretch;
+    justify-content: center;
+  }
+  
+  .avatar {
+    background-color: #222;
+  }
+  
+  .box {
+    padding: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 2px solid;
+    border-color: #5a5ef6 #262626 #262626 #5a5ef6;
+    background-color: #0000a5;
+    font-size: 140%;
+    font-family: 'Press Start 2P';
+    color: #9d9dff;
+    text-shadow: 0.15em 0.15em 0 rgba(0,0,0,0.5);
+    text-align: center;
+  }
+  
+  .info {
+    text-align: left;
+  }
+  
+  .number {
+    font-size: 200%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #d8d8ff;
+    text-shadow: -2px -2px 0 #3d0002, 2px -2px 0 #3d0002, -2px 2px 0 #3d0002, 2px 2px 0 #3d0002, 0.15em 0.15em 0 rgba(0,0,0,0.5);
+  }
+  
+  button {
+    font: inherit;
+    text-shadow: inherit;
+    background-color: transparent;
+    color: currentColor;
+    border: 2px solid;
+    border-color: #5a5ef6 #262626 #262626 #5a5ef6;
+    padding: 3px;
+    display: inline-block;
+    cursor: pointer;
+  }

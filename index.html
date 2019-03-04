@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/editor.css">
+    </head>
+    <body>
+    <div style="font-family: PressStart;"> </div>   
+    <div id = "main-game" class="hide">
+        <canvas id="MainCanvas" >Sorry!!!</canvas>
+        <div class="hud-container">
+            <div class="hud">
+              <div class="score box">
+                Score
+                <div class="number" id="score">100</div>
+              </div>
+              <div class="score box">
+                Lives
+                <div class="number" id="lives">3</div>
+              </div>
+              <div class="avatar box" id="avatar">
+              </div>
+              <div class="health box">
+                Health
+                <div class="number" id="health">100</div>
+              </div>
+              <div class="ammo box">
+                Ammo
+                <div class="number" id="ammo">5</div>
+              </div>
+              <div class="arms box" id="arms">
+                    Arms
+                    <div class="numberpad">
+                        <br>
+                      <button>1</button><button>2</button><button>3</button>
+                    </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id = "menu">
+        <img class = "init fadeOut" src ="res/menu/init.png"/>
+        <div class = "init fadeBlack" style="background-color:black"></div>
+        <img class = "logo" src ="res/menu/vallasc.png"/>
+        <div class= "menu-container">
+            <div class="main-menu "></div>
+        </div>
+    </div>
+    <div id="editor" class="hide">
+        <div class="Screen">
+            <canvas id="EditorCanvas" >Opps!</canvas>
+        </div>
+        <div class="Sidebar">
+
+            <div class="Panels">
+                <div class="Panel">
+                    <div class="PanelHeader">Commands</div>
+                        <div class="Controls-container" > 
+                            <span class="button" id="new">New</span>
+                            <span class="button" id="exit">Exit</span>
+                        </div>
+                    </div>
+                <div class="Panel">
+                    <div class="PanelHeader">Maps</div>
+                    <div class="Controls-container">
+                        <div>
+                            <input  type="text" name="zoom-slider" id="mapName1">
+                            <span class="button" id="save">Save</span>
+                        </div>
+                        <div>
+                            <select id="selectLoad">
+                            </select>
+                            <span class="button" id="load">Load</span>
+                        </div>
+                        <div>
+                            <select id="selectDelete">
+                            </select>
+                            <span class="button" id="deleteMap">Delete</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="Panel">
+                    <div class="PanelHeader">Sky and floor</div>
+                    <div class="Controls-container">
+                        <div>
+                        <input type="color" id="sky" name="sky" value="#212121">
+                        <span class="buttonColor">Sky</span>
+                        </div>
+                        <div>
+                        <input type="color" id="floor" name="floor" value="#676767">
+                        <span class="buttonColor">Floor</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="ElementPanel">
+                    <div class="PanelHeader">Build</div>
+                    <div class="Controls-container">
+                        <span class="button" id="fill">Fill</span>
+                        <span class="button" id="delete">Erase</span>
+                        <span class="buttonPlayer" id ="player" style="width: 85%">
+                            Insert Player
+                        </span>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab" id="wallsBtn" class="active">Walls</div>
+                        <div class="tab" id="spritesBtn" >Sprites</div>
+                    </div>
+                    <div class="tab-container">
+                            <div class="Element" id="walls">
+                            </div>
+                            <div class="Element" id="sprites">
+                            </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <script src="built/map.js"></script>
+        <script src="built/level.js"></script>
+        <script src="built/player.js"></script>
+        <script src="built/engine.js"></script>
+        <script src="built/game.js"></script>
+        <script src="built/editor.js"></script>
+        <script src="built/menu.js"></script>
+        <script src="built/main.js"></script>
+    </body>
+</html>
