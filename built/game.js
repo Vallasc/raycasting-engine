@@ -167,10 +167,10 @@ var Game = /** @class */ (function () {
                     _this.ctx.fillStyle = '#000000';
                     _this.ctx.font = '70px "Press Start 2P"';
                     _this.ctx.textAlign = "center";
-                    _this.ctx.fillText("YOU LOSE", (_this.canvas.width / 2) + 6, (_this.canvas.height / 2) + 6);
+                    _this.ctx.fillText("YOU LOST", (_this.canvas.width / 2) + 6, (_this.canvas.height / 2) + 6);
                     _this.ctx.font = '70px "Press Start 2P"';
                     _this.ctx.fillStyle = '#FFFFFF';
-                    _this.ctx.fillText("YOU LOSE", _this.canvas.width / 2, _this.canvas.height / 2);
+                    _this.ctx.fillText("YOU LOST", _this.canvas.width / 2, _this.canvas.height / 2);
                     _this.ctx.restore();
                 }
                 else {
@@ -193,10 +193,10 @@ var Game = /** @class */ (function () {
         this.ctx.fillStyle = '#000000';
         this.ctx.font = '70px "Press Start 2P"';
         this.ctx.textAlign = "center";
-        this.ctx.fillText("YOU WIN", (this.canvas.width / 2) + 6, (this.canvas.height / 2) + 6);
+        this.ctx.fillText("YOU WON", (this.canvas.width / 2) + 6, (this.canvas.height / 2) + 6);
         this.ctx.font = '70px "Press Start 2P"';
         this.ctx.fillStyle = '#FFFFFF';
-        this.ctx.fillText("YOU WIN", this.canvas.width / 2, this.canvas.height / 2);
+        this.ctx.fillText("YOU WON", this.canvas.width / 2, this.canvas.height / 2);
         this.ctx.restore();
     };
     Game.prototype.load = function (map, camera, resolution, fovDeg) {
