@@ -207,11 +207,11 @@ class Game {
                 this.ctx.fillStyle = '#000000';
                 this.ctx.font = '70px "Press Start 2P"'
                 this.ctx.textAlign = "center"; 
-                this.ctx.fillText("YOU LOSE", (this.canvas.width/2)+6, (this.canvas.height/2)+6);
+                this.ctx.fillText("YOU LOST", (this.canvas.width/2)+6, (this.canvas.height/2)+6);
         
                 this.ctx.font = '70px "Press Start 2P"'
                 this.ctx.fillStyle = '#FFFFFF';
-                this.ctx.fillText("YOU LOSE", this.canvas.width/2, this.canvas.height/2);
+                this.ctx.fillText("YOU LOST", this.canvas.width/2, this.canvas.height/2);
                 this.ctx.restore();
             } else { 
                 this.stop = false;
@@ -235,11 +235,11 @@ class Game {
         this.ctx.fillStyle = '#000000';
         this.ctx.font = '70px "Press Start 2P"'
         this.ctx.textAlign = "center"; 
-        this.ctx.fillText("YOU WIN", (this.canvas.width/2)+6, (this.canvas.height/2)+6);
+        this.ctx.fillText("YOU WON", (this.canvas.width/2)+6, (this.canvas.height/2)+6);
 
         this.ctx.font = '70px "Press Start 2P"'
         this.ctx.fillStyle = '#FFFFFF';
-        this.ctx.fillText("YOU WIN", this.canvas.width/2, this.canvas.height/2);
+        this.ctx.fillText("YOU WON", this.canvas.width/2, this.canvas.height/2);
         this.ctx.restore();
     }
     public load( map : RayMap, camera : RayCamera, resolution : number, fovDeg : number ) : void {
